@@ -1,0 +1,148 @@
+---
+output: html_document
+header-includes:
+- \usepackage{setspace}
+- \usepackage{float}
+---
+
+```{r setup, include=FALSE}
+library(data.table)
+library(sf)
+library(ggplot2)
+library(scales)
+library(units)
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir="C:/git/Unemployment-Insurance-Factsheet/")
+blues = c(
+  "#050D5E",
+  "#3C4586",
+  "#737EAE",
+  "#ABB7D6",
+  "#E3F0FF"
+)
+reds = c(
+  "#C84A35",
+  "#D16857",
+  "#DA8779",
+  "#E4A69B",
+  "#EDC5BD",
+  "#F7E4E0"
+)
+```
+
+
+```{r logo, echo=FALSE, fig.align="center", float.placement = "H", out.width="15%"}
+knitr::include_graphics("logo.jpeg")
+```
+
+<center>
+
+# How Federal Actions Are Impacting Maryland Employment: High-Frequency Indicators
+
+Last Updated: `r format(Sys.Date(), "%B %d, %Y")`
+
+</center>
+
+
+As the federal government implements layoffs and as federal contracts and grants face disruption, Maryland's economy may be significantly impacted. The following economic indicators will be regularly updated as new data is made available.
+
+## Initial Unemployment Insurance Claims by County for the Week Ending `r # Placeholder for Date`
+In total, `r # Placeholder for total initial claims` initial claims were filed through the Maryland Department of Labor between `r # Placeholder for start date` and `r # Placeholder for end date`, by workers employed in Maryland. This includes both (1) federal workers, filing through the unemployment insurance (UI) program that is specific to them (called Unemployment Compensation for Federal Employees, or UCFE), and (2) workers who are not federal employees, filing through the regular state UI program, such as federal contractors, other private sector workers, and state and local public sector workers.
+
+The map below shows how claims were distributed by county of residence, though it does not include initial claims by out-of-state claimants or those whose residence information was unknown (`r # Placeholder for unknown/out-of-state claims claims combined`). Initial claim volumes were highest in `r # Placeholder for highest counties`. More information is available from the Maryland Department of Labor.   
+
+### Initial Unemployment Insurance Claims by County, Week Ending `r # Placeholder for Date`
+
+```{r line1, echo=FALSE, fig.align="center", float.placement = "H"}
+# Placeholder for R code to generate the map of initial claims by county
+# This code should:
+# 1. Load county-level claims data
+# 2. Load Maryland county boundaries (e.g., using the 'sf' package)
+# 3. Join the data
+# 4. Create a choropleth map
+print("Placeholder for Maryland county claims map")
+# Example: plot(county_data_sf['claims'])
+```
+
+## Initial Federal Unemployment Insurance Claims in Maryland
+
+The US Department of Labor (US DOL) publishes estimates of federal workers filing for unemployment insurance through the UCFE program.
+
+<style>
+table {
+  border-collapse: collapse;
+  border: 2px solid;
+  border-top: 2px solid !important;
+}
+td, th {
+  border: 2px solid;
+  border-top: 2px solid !important;
+  text-align: center;
+}
+</style>
+
+|                                                                                        |                                                                                       |                                                                                                |
+| :------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------------- |
+|  Initial UCFE claims by <br> Maryland residents for <br> week ending `r # Date` <br> **`r # Placeholder for initial UCFE claims`** <br> Source: US Dept. of Labor  |  Total initial UCFE claims <br> by Maryland residents for <br> `r # Date Range` <br> **`r # Placeholder for total UCFE claims`** <br> Source: US Dept. of Labor  |  Continuing UCFE claims <br> made by Maryland <br> residents for week <br> ending `r # Date` <br> **`r # Placeholder for continuing UCFE claims`** <br> Source: US Dept. of Labor  |
+
+`r # Placeholder for initial UCFE claims` Maryland residents filed initial UCFE claims in the week ending `r # Placeholder for Date`, regardless of the state/district of their prior employment. Although initial UCFE claims have fallen from a peak of `r # Placeholder for peak UCFE claims` for the week ending `r # Placeholder for peak date`, the number of federal claims filed remains elevated above typical levels. For comparison, `r # Placeholder for 2024 avg UCFE claims` UCFE claims were filed by Maryland residents in an average week in 2024. Higher claim levels are anticipated as federal actions continue.
+
+MD Labor has received over `r # Placeholder for total federal claims received by MD Labor` federal claims since the start of the new federal administration. This total includes federal civilian and military claims by workers employed in Maryland. It also includes claims that may be currently withdrawn, that are marked fraudulent or potentially fraudulent, whose federal wages have not yet been confirmed, or that are for claimants who work outside Maryland and need to be referred to another jurisdiction. This number is, therefore, higher than the total initial UCFE claim figure from US DOL.
+
+According to US DOL, Maryland residents filed `r # Placeholder for total initial UCFE claims` initial UCFE claims between `r # Placeholder for start date` and `r # Placeholder for end date`. Maryland residents filed `r # Placeholder for continuing UCFE claims` continuing UCFE claims for the week ending `r # Placeholder for Date` (reflecting ongoing unemployment in the prior seven days). This is elevated from 2024, when Maryland residents made an average of `r # Placeholder for 2024 avg continuing UCFE claims` continuing UCFE claims each week. More information is available from the [US Department of Labor](https://oui.doleta.gov/unemploy/DataDashboard.asp).
+
+## Initial Federal Unemployment Insurance Claims by Maryland Residents, Week Ending `r # Start Date` to `r # End Date`
+
+
+```{r line2, echo=FALSE, fig.align="center", float.placement = "H"}
+# Placeholder for R code to generate the line chart of initial UCFE claims
+# This code should:
+# 1. Load the time series data for initial UCFE claims
+# 2. Create a line plot using ggplot2 or base R plotting
+print("Placeholder for Initial UCFE Claims Line Chart")
+# Example: ggplot(ucfe_data, aes(x=week_ending, y=claims)) + geom_line() + geom_point() + labs(title="Initial UCFE Claims", x="Week Ending", y="Initial Claims")
+```
+
+## Initial State Unemployment Insurance Claims in Maryland
+
+US DOL publishes data on state unemployment insurance claims, which includes unemployment insurance claims filed by federal contractors, other private sector workers, and state and local public sector workers.
+
+|                                                                                                 |                                                                                                   |                                                                                                  |
+| :---------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------------------------------- |
+|  Initial state UI claims filed <br> by Maryland residents for <br> week ending `r # Date` <br> **`r # Placeholder for initial state claims`** <br> Source: US Dept. of Labor  |  Total initial state UI <br> claims filed by <br> Maryland residents, <br> `r # Date Range` <br> **`r # Placeholder for total state claims`** <br> Source: US Dept. of Labor  |  Continuing state UI <br> claims made by Maryland <br> residents for week <br> ending `r # Date` <br> **`r # Placeholder for continuing state claims`** <br> Source: US Dept. of Labor  |
+
+
+`r # Placeholder for initial state claims` Maryland residents filed regular state unemployment claims in the week ending `r # Placeholder for Date`, according to data from US DOL. These numbers are under 2024 levels; for the week ending `r # Placeholder for prior year date`, Maryland residents filed `r # Placeholder for prior year initial claims` initial claims.   
+
+Between `r # Placeholder for start date` and `r # Placeholder for end date`, a total of `r # Placeholder for total state claims` initial claims were filed by Maryland residents. Not all of these claims may be approved. Data from US DOL shows that `r # Placeholder for continuing state claims` continuing claims were made by Maryland residents in the week ending `r # Placeholder for Date` (reflecting ongoing unemployment in the prior seven days). This is slightly elevated from one year prior; for the week ending `r # Placeholder for prior year date`, there were `r # Placeholder for prior year` continuing claims continuing claims made by Maryland residents. More information is available from the [US Department of Labor](https://oui.doleta.gov/unemploy/DataDashboard.asp).
+
+### Initial State Unemployment Insurance Claims by Maryland Residents, Week Ending `r # Start Date` to `r # End Date`
+
+```{r map, echo=FALSE, fig.align="center", float.placement = "H"}
+# Placeholder for R code to generate the line chart of initial State UI claims
+# This code should:
+# 1. Load the time series data for initial State UI claims
+# 2. Create a line plot using ggplot2 or base R plotting
+print("Placeholder for Initial State UI Claims Line Chart")
+# Example: ggplot(state_ui_data, aes(x=week_ending, y=claims)) + geom_line() + geom_point() + labs(title="Initial State UI Claims", x="Week Ending", y="Initial Claims")
+```
+
+## Frequently Asked Questions About UI Claims Data
+**Q: Why is some data reported by state of filing and some by state of residence?**
+
+**A:** Data on unemployment insurance claims comes from several sources. County-level information on initial claims is reported by MD Labor and is based on detailed information available by claimants filing in Maryland. US DOL reports claims through two reports from the Employment and Training Administration (ETA): the ETA 538 report and the ETA 539 report. The ETA 538 report contains information on initial claims filed in each state and underlies the weekly press release from US DOL on Thursdays at 8:30 a.m.. The ETA 539 report is updated later and reports claims by state of residence. Therefore, initial claims data for Maryland in the ETA 539 report will differ from advance claims in the ETA 538 report or county-level data reported on MD Labor's website. This tracking document contains information on claims from MD Labor and the ETA 539 report.
+
+**Q: What is the difference between initial and continuing claims?**
+
+**A:** This tracking document contains information on both initial claims and continuing claims. After separating from their previous employer, a worker files an initial claim. This is the first step in the process of receiving unemployment insurance benefits. After one week, if the claimant is still out of work and has completed all applicable reemployment activities, a claimant files a continuing claim to claim benefits for that week of unemployment. Claimants may make additional continuing claims in future weeks.
+
+While initial claims and continuing claims often move in tandem, they are not identical. For example, if an initial claim is not approved, it cannot be carried forward as a continuing claim, and some workers filing continuing claims may find a new job and stop filing in future weeks.
+
+**Q: Monthly jobs reports also cover the unemployment rate. Is this the same data?**
+
+**A:** No. Each month, the Bureau of Labor Statistics (BLS) releases data on Maryland's economy, including the unemployment rate. Although BLS uses data on continuing claims in Maryland as part of their modeling process, the monthly unemployment rate is different from the data presented in this document.
+
+To count as unemployed, a Maryland resident needs to not have a job and be actively looking for work or be on a temporary layoff from their current job. However, not all unemployed Marylanders are receiving unemployment insurance benefits. Some unemployed Marylanders may have fully exhausted their unemployment insurance benefits and still be searching for a job. Additionally, some Marylanders may not qualify for unemployment insurance benefits because they did not lose a job. For example, a recent graduate who does not have a job but is actively searching for one would count as unemployed.
+
+Furthermore, not all Marylanders receiving unemployment insurance benefits count as unemployed. For example, some Marylanders receive unemployment insurance benefits if they have experienced a significant reduction in their work hours. For the purposes of the monthly unemployment rate from BLS, these workers count as currently having a job and therefore are not treated as unemployed.
+
