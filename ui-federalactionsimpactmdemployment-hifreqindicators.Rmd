@@ -49,7 +49,7 @@ As the federal government implements layoffs and as federal contracts and grants
 ## Initial Unemployment Insurance Claims by County for the Week Ending `r # Placeholder for Date`
 In total, `r # Placeholder for total initial claims` initial claims were filed through the Maryland Department of Labor between `r # Placeholder for start date` and `r # Placeholder for end date`, by workers employed in Maryland. This includes both (1) federal workers, filing through the unemployment insurance (UI) program that is specific to them (called Unemployment Compensation for Federal Employees, or UCFE), and (2) workers who are not federal employees, filing through the regular state UI program, such as federal contractors, other private sector workers, and state and local public sector workers.
 
-The map below shows how claims were distributed by county of residence, though it does not include initial claims by out-of-state claimants or those whose residence information was unknown (`r # Placeholder for unknown/out-of-state claims claims combined`). Initial claim volumes were highest in `r # Placeholder for highest counties`. More information is available from the Maryland Department of Labor.   
+The map below shows how claims were distributed by county of residence, though it does not include initial claims by out-of-state claimants or those whose residence information was unknown (`r # Placeholder for unknown/out-of-state claims claims combined`). Initial claim volumes were highest in `r # Placeholder for highest counties`. More information is available from the [Maryland Department of Labor](https://labor.maryland.gov/employment/uicounty.shtml).   
 
 ### Initial Unemployment Insurance Claims by County, Week Ending `r # Placeholder for Date`
 
