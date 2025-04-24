@@ -209,7 +209,7 @@ MD Labor has received over `r number_format(big.mark=",")(MD_DOL_INTERNAL_UCFE)`
 
 According to US DOL, Maryland residents filed `r number_format(big.mark=",")(sum(jan19_ar539_md$fic,na.rm=T))` initial UCFE claims between `r format(min(jan19_ar539_md$reflected_week_ending), "%B %d")` and `r format(end_date, "%B %d, %Y")`. Maryland residents filed `r number_format(big.mark=",")(latest_ar539_md_row$fcw)` continuing UCFE claims for the week ending `r format(end_date, "%B %d, %Y")` (reflecting ongoing unemployment in the prior seven days). This is elevated from 2024, when Maryland residents made an average of `r round(mean(ar539_md_2024$fcw, na.rm=T))` continuing UCFE claims each week. More information is available from the [US Department of Labor](https://oui.doleta.gov/unemploy/DataDashboard.asp).
 
-**Initial Federal Unemployment Insurance Claims by Maryland Residents, Week Ending `r format(start_date, "%D")` to `r format(end_date, "%D")`**
+**Initial Federal Unemployment Insurance Claims by Maryland Residents, Week Ending `r format(min(jan19_ar539_md$reflected_week_ending), "%D")` to `r format(end_date, "%D")`**
 
 
 ```{r line1, echo=FALSE, fig.align="center", float.placement = "H", fig.dim = c(7, 3)}
@@ -264,7 +264,7 @@ US DOL publishes data on state unemployment insurance claims, which includes une
 
 Between `r format(min(jan19_ar539_md$reflected_week_ending), "%B %d")` and `r format(end_date, "%B %d, %Y")`, a total of `r number_format(big.mark=",")(sum(jan19_ar539_md$ic,na.rm=T))` initial claims were filed by Maryland residents. Not all of these claims may be approved. Data from US DOL shows that `r number_format(big.mark=",")(latest_ar539_md_row$cw)` continuing claims were made by Maryland residents in the week ending `r format(end_date, "%B %d, %Y")` (reflecting ongoing unemployment in the prior seven days). This is `r case_when(latest_ar539_md_row$cw < year_prior_ar539_md$cw ~ "reduced from", latest_ar539_md_row$cw == year_prior_ar539_md$cw ~ "equal to", latest_ar539_md_row$cw > year_prior_ar539_md$cw ~ "elevated from", .default="under")` one year prior; for the week ending `r format(year_prior_ar539_md$report_for_period_ending, "%B %d, %Y")`, there were `r number_format(big.mark=",")(year_prior_ar539_md$cw)` continuing claims continuing claims made by Maryland residents. More information is available from the [US Department of Labor](https://oui.doleta.gov/unemploy/DataDashboard.asp).
 
-**Initial State Unemployment Insurance Claims by Maryland Residents, Week Ending `r format(start_date, "%D")` to `r format(end_date, "%D")`**
+**Initial State Unemployment Insurance Claims by Maryland Residents, Week Ending `r format(min(jan19_ar539_md$reflected_week_ending), "%D")` to `r format(end_date, "%D")`**
 
 ```{r line2, echo=FALSE, fig.align="center", float.placement = "H", fig.dim = c(7, 3)}
 ggplot(data = jan19_ar539_md, aes(x = report_for_period_ending, y = ic)) +
