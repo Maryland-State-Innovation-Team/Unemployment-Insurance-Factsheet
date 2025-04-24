@@ -164,7 +164,7 @@ In total, `r number_format(big.mark=",")(sum(latest_table$regular_ui, na.rm=T))`
 
 The map below shows how claims were distributed by county of residence, though it does not include initial claims by out-of-state claimants or those whose residence information was unknown (`r  number_format(big.mark=",")(sum(subset(latest_table, county_cap %in% c("Unknown", "NON-MARYLAND"))$regular_ui, na.rm=T))`). Initial claim volumes were highest in `r paste(paste(top_counties[1:3], collapse=", "), top_counties[4], sep=", and ")` counties. More information is available from the [Maryland Department of Labor](https://labor.maryland.gov/employment/uicounty.shtml).   
 
-**Initial Unemployment Insurance Claims by County, Week Ending `r format(end_date, "%D")`**
+**Initial Unemployment Insurance Claims by County, Week Ending `r format(extracted_table_date, "%D")`**
 
 ```{r map, echo=FALSE, fig.align="center", float.placement = "H", fig.dim = c(7, 3)}
 ggplot(data = counties) +
